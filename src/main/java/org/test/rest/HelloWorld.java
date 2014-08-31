@@ -1,16 +1,22 @@
 package org.test.rest;
 
-import javax.ejb.Stateful;
+import java.io.Serializable;
+
+import javax.enterprise.context.SessionScoped;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Stateful
+@SessionScoped
 @Path("/test")
-public class HelloWorld {
+public class HelloWorld implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int i = 0;
 
 	@GET
